@@ -191,17 +191,21 @@
     wget
     curl
     python314
-    google-chrome
+    go
+    gcc
     nekoray
     p7zip
     neofetch
-    obsidian
-    gh
+    ripgrep
+    lazygit
 
     libreoffice-qt
     hunspell # spelling for libreoffice
     hunspellDicts.ru_RU
     hunspellDicts.en_US
+
+    google-chrome
+    obsidian
 
     vesktop # discord + vencord
     heroic # epic, gog and other games
