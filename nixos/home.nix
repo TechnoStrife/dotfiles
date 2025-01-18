@@ -77,10 +77,12 @@
     userEmail = "technostrife@gmail.com";
     extraConfig = {
       init = { defaultBranch = "main"; };
-      credential.helper = "${
+      credential = {
+        credentialStore = "secretservice";
+        helper = "${
           pkgs.git.override { withLibsecret = true; }
         }/bin/git-credential-libsecret";
-
+      };
     };
   };
 }
