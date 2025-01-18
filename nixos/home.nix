@@ -30,6 +30,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.git-credential-manager
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -76,6 +77,10 @@
     userEmail = "technostrife@gmail.com";
     extraConfig = {
       init = { defaultBranch = "main"; };
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
+
     };
   };
 }
