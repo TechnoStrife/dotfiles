@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  mkOutOfStoreSymlink = config.lib.file.mkOutOfStoreSymlink;
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -46,6 +49,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/nvim".source = mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
   };
 
   # Home Manager can also manage your environment variables through
@@ -83,5 +87,13 @@
         "https://github.com".username = "TechnoStrife";
       };
     };
+  };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
   };
 }
