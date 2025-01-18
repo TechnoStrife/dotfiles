@@ -196,6 +196,7 @@
     p7zip
     neofetch
     obsidian
+    gh
 
     libreoffice-qt
     hunspell # spelling for libreoffice
