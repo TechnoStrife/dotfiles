@@ -80,6 +80,7 @@
     userEmail = "technostrife@gmail.com";
     extraConfig = {
       init = { defaultBranch = "main"; };
+      credential.helper = "oauth";
     };
   };
 }
