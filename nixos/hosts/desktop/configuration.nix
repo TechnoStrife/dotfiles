@@ -194,6 +194,8 @@
     google-chrome
     nekoray
     p7zip
+    neofetch
+    obsidian
 
     libreoffice-qt
     hunspell # spelling for libreoffice
