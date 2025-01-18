@@ -79,9 +79,8 @@
       init = { defaultBranch = "main"; };
       credential = {
         credentialStore = "secretservice";
-        helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+        helper = "manager";
+        "https://github.com".username = "TechnoStrife";
       };
     };
   };
