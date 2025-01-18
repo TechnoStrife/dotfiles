@@ -193,6 +193,7 @@
     python314
     go
     gcc
+    rustup
     nekoray
     p7zip
     neofetch
