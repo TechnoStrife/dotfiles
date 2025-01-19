@@ -4,10 +4,10 @@
 set -e
 
 # cd to your config dir
-pushd ~/dotfiles/nixos/
+pushd ~/dotfiles/nixos/ >/dev/null
 
 # Edit your config
-$EDITOR .
+$EDITOR
 
 # Early return if no changes were detected (thanks @singiamtel!)
 if git diff --quiet '*.nix'; then
@@ -34,7 +34,7 @@ current=$(nixos-rebuild list-generations | grep current)
 git commit -am "$current"
 
 # Back to where you were
-popd
+popd >/dev/null
 
 # Notify all OK!
 # notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
