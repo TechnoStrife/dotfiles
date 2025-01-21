@@ -199,6 +199,7 @@
     neofetch
     ripgrep
     lazygit
+    wl-clipboard
 
     libreoffice-qt
     hunspell # spelling for libreoffice
@@ -213,6 +214,7 @@
     lutris # games launcher
     bottles # wine wrapper
     flameshot # screenshots
+    protontricks
 
     inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
   ];

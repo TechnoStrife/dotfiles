@@ -69,11 +69,19 @@ in
   #  /etc/profiles/per-user/tech/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+
   };
+  home.sessionPath = [ "~/.cargo/bin" ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      . "/etc/profiles/per-user/tech/etc/profile.d/hm-session-vars.sh"
+    '';
+  };
 
   programs.git = {
     enable = true;
