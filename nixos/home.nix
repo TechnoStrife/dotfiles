@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, stateVersion, ... }:
 
 let
   mkOutOfStoreSymlink = config.lib.file.mkOutOfStoreSymlink;
@@ -6,21 +6,14 @@ in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "tech";
-  home.homeDirectory = "/home/tech";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = stateVersion; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -33,7 +26,10 @@ in
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.git-credential-manager
+    git-credential-manager
+    python314
+    rustup
+    lazygit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -75,6 +71,12 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.go = {
+    enable = true;
+    goPath = ".local/go";
+    # goBin = ".local/go/bin";
+  };
 
   programs.bash = {
     enable = true;
