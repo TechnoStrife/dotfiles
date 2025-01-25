@@ -13,6 +13,7 @@
 
       # nerdfonts
       nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
     ];
 
     # use fonts specified by user rather than default ones
