@@ -1,4 +1,3 @@
-
 { config, pkgs, inputs, ... }:
 
 {
@@ -20,6 +19,9 @@
 
     inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
     vesktop # discord + vencord
+
+    ffmpeg
+    obs-studio
   ];
 
   # Install firefox.

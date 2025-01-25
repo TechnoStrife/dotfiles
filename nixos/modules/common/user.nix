@@ -4,7 +4,7 @@
 {
   users.users.${username} = {
     isNormalUser = true;
-    description = "technostrife";
+    description = "me";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 }

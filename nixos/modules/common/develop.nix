@@ -1,9 +1,11 @@
-
 { config, pkgs, inputs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     gcc
+
+    jq
+    yq
   ];
 
   programs.neovim = {

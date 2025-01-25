@@ -1,8 +1,6 @@
-
 { config, pkgs, inputs, ... }:
 
 {
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -17,4 +15,9 @@
     options = "grp:caps_toggle,grp_led:scroll";
   };
 
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.arcmenu
+    gnomeExtensions.tray-icons-reloaded
+  ];
+  
 }
