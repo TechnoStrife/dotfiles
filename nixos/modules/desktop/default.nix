@@ -6,6 +6,7 @@
     ./splash-screen.nix
     ./network.nix
     ./graphical-environment.nix
+    ./fonts.nix
     ./audio.nix
     ./programs.nix
     ./gaming.nix

@@ -12,7 +12,18 @@
     file
     tree
     p7zip
+    zip
+    unzip
 
     ripgrep
   ];
+
+  programs = {
+    tmux = {
+      enable = true;
+      clock24 = true;
+      keyMode = "vi";
+      extraConfig = "mouse on";
+    };
+  };
 }

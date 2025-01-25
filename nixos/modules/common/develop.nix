@@ -5,7 +5,7 @@
     gcc
 
     jq
-    yq
+    yq-go
   ];
 
   programs.neovim = {

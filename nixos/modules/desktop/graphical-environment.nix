@@ -15,6 +15,13 @@
     options = "grp:caps_toggle,grp_led:scroll";
   };
 
+  # screen capture?
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
   environment.systemPackages = with pkgs; [
     gnomeExtensions.arcmenu
     gnomeExtensions.tray-icons-reloaded

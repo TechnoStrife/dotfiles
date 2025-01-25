@@ -106,4 +106,6 @@ in
     vimAlias = true;
     vimdiffAlias = true;
   };
+
+  programs.btop.enable = true; # replacement of htop/nmon
 }
