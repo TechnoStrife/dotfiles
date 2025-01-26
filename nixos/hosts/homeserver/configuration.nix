@@ -12,6 +12,8 @@
 
     ../../modules/common
     ../../modules/server
+
+    ../../modules/services/nextcloud.nix
   ];
 
   networking.hostName = "homeserver";

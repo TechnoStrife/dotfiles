@@ -34,7 +34,7 @@ if [ -f ./flake-name ]; then
     FLAKE=$(cat ./flake-name)
 fi
 
-echo "NixOS Rebuilding flake $FLAKE..."
+echo "NixOS Rebuilding from $FLAKE flake..."
 
 # Rebuild, output simplified errors, log trackebacks
 echo "Full log at /tmp/nixos-switch.log"
