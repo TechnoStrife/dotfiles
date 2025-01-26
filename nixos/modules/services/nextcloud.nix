@@ -10,6 +10,12 @@ in
   services.nextcloud = {
     enable = true;
 
+    settings = {
+      trusted_domains = [
+        "192.168.1.110"
+      ];
+    };
+
     # Need to manually increment with every major upgrade.
     package = pkgs.nextcloud30;
     
