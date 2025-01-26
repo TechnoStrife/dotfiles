@@ -11,7 +11,7 @@ trap cleanup 0
 # Shows your changes
 git diff -U0 '*.nix'
 
-if [ -f ~/dotfiles/.git ]; then
+if [ -d ~/dotfiles/.git ]; then
     mv ~/dotfiles/.git ~/dotfiles/git
 fi
 
