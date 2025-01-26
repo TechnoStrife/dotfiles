@@ -11,9 +11,9 @@
     ./programs.nix
     ./gaming.nix
     ./printing.nix
+    ./vm.nix
   ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
 }
