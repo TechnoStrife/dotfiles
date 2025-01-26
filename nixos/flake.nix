@@ -41,7 +41,7 @@
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./home.nix;
+              home-manager.users.${username} = import ./home/desktop.nix;
             }
 	  ];
 	};
@@ -64,7 +64,7 @@
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./home.nix;
+              home-manager.users.${username} = import ./home/server.nix;
             }
           ];
         };

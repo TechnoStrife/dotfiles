@@ -1,4 +1,5 @@
 {
+  userpasswd = throw "rootpasswd not set";
   rootpasswd = throw "rootpasswd not set";
   publickey = throw "publickey not set";
 
