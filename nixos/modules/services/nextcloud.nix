@@ -9,7 +9,7 @@ in
     enable = true;
 
     # Need to manually increment with every major upgrade.
-    package = pkgs.nextcloud28;
+    package = pkgs.nextcloud30;
     
     # Let NixOS install and configure Redis caching automatically.
     configureRedis = true;
