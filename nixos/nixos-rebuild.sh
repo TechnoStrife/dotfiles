@@ -30,7 +30,7 @@ pushd ~/dotfiles/nixos/ >/dev/null
 # alejandra . &>/dev/null || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 FLAKE="desktop"
-if [ -f ~/dotfiles/flake-name ]; then
+if [ -f ./flake-name ]; then
     FLAKE=$(cat ./flake-name)
 fi
 
