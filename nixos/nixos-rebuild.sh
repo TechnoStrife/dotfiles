@@ -43,8 +43,13 @@ sudo nixos-rebuild switch --show-trace --flake .#$FLAKE &> /tmp/nixos-switch.log
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
 
+mv ~/dotfiles/git ~/dotfiles/.git
+trap - 0
+
 # Commit all changes witih the generation metadata
-git commit -am "$current"
+if [ "$FLAKE" = "desktop" ]; then
+    git commit -am "$current"
+fi
 
 # Back to where you were
 popd >/dev/null
