@@ -31,7 +31,7 @@ git diff -U0 '*.nix'
 
 FLAKE="desktop"
 if [ -f ~/dotfiles/flake-name ]; then
-    FLAKE=$(cat ~/dotfiles/flake-name)
+    FLAKE=$(cat ./flake-name)
 fi
 
 echo "NixOS Rebuilding flake $FLAKE..."
