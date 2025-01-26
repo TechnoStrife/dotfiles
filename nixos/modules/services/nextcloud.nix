@@ -4,6 +4,8 @@ let
   secrets = import ../../secrets.nix;
 in
 {
+  networking.firewall.allowedTCPPorts = [ 80 ];
+
   environment.etc."nextcloud-admin-pass".text = secrets.nextcloudpass;
   services.nextcloud = {
     enable = true;
