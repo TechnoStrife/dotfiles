@@ -8,6 +8,9 @@ cleanup() {
 }
 trap cleanup 0
 
+# Shows your changes
+git diff -U0 '*.nix'
+
 mv ~/dotfiles/.git ~/dotfiles/git
 
 # cd to your config dir
@@ -25,9 +28,6 @@ pushd ~/dotfiles/nixos/ >/dev/null
 
 # Autoformat your nix files
 # alejandra . &>/dev/null || ( alejandra . ; echo "formatting failed!" && exit 1)
-
-# Shows your changes
-git diff -U0 '*.nix'
 
 FLAKE="desktop"
 if [ -f ~/dotfiles/flake-name ]; then

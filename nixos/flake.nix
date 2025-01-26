@@ -32,7 +32,7 @@
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit specialArgs;
-	  modules = [
+          modules = [
             ./hosts/desktop/configuration.nix
 
             home-manager.nixosModules.home-manager
@@ -43,8 +43,8 @@
               home-manager.extraSpecialArgs = inputs // specialArgs;
               home-manager.users.${username} = import ./home/desktop.nix;
             }
-	  ];
-	};
+          ];
+        };
 
         # nixos anywhere
         # nix run github:nix-community/nixos-anywhere -- --flake .#homeserver --generate-hardware-config nixos-generate-config ./hosts/homelab/hardware-configuration.nix <hostname>
