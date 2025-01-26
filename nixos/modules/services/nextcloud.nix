@@ -14,7 +14,7 @@ in
     # Let NixOS install and configure Redis caching automatically.
     configureRedis = true;
 
-    datadir = "/mnt/data/nextcloud";
+    datadir = "/mnt/nextcloud";
     
     hostName = "localhost";
     config.adminpassFile = "/etc/nextcloud-admin-pass";
