@@ -23,6 +23,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    menulibre
+
     gnomeExtensions.arcmenu
     gnomeExtensions.tray-icons-reloaded
   ];
