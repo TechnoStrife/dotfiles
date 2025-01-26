@@ -120,7 +120,7 @@ in
       WantedBy = [ "graphical.target" ];
     };
     Service = {
-      ExecStart = "hydroxide -disable-carddav serve";
+      ExecStart = "/etc/profiles/per-user/${username}/bin/hydroxide -disable-carddav serve";
     };
   };
 }
