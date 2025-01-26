@@ -13,9 +13,6 @@
 
     google-chrome
 
-    evolution # email client
-    hydroxide # protonmail bridge
-
     obsidian
 
     flameshot # screenshots

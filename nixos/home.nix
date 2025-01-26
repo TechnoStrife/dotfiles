@@ -30,6 +30,9 @@ in
     python314
     rustup
     lazygit
+
+    evolution # email client
+    hydroxide # protonmail bridge
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -108,4 +111,16 @@ in
   };
 
   programs.btop.enable = true; # replacement of htop/nmon
+
+  systemd.user.services.hydroxide = {
+    Unit = {
+      Description = "hydroxide protonmail bridge";
+    };
+    Install = {
+      WantedBy = [ "graphical.target" ];
+    };
+    Service = {
+      ExecStart = "hydroxide -disable-carddav serve";
+    };
+  };
 }
