@@ -11,7 +11,9 @@ trap cleanup 0
 # Shows your changes
 git diff -U0 '*.nix'
 
-mv ~/dotfiles/.git ~/dotfiles/git
+if [ -f ~/dotfiles/.git ]; then
+    mv ~/dotfiles/.git ~/dotfiles/git
+fi
 
 # cd to your config dir
 pushd ~/dotfiles/nixos/ >/dev/null
