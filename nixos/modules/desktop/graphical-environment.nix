@@ -27,6 +27,7 @@
 
     gnomeExtensions.arcmenu
     gnomeExtensions.tray-icons-reloaded
+    gnomeExtensions.bottom-panel
   ];
   
 }
