@@ -11,7 +11,7 @@
       Description = "hydroxide protonmail bridge";
     };
     Install = {
-      WantedBy = [ "graphical.target" ];
+      WantedBy = [ "default.target" ];
     };
     Service = {
       ExecStart = "/etc/profiles/per-user/${username}/bin/hydroxide -disable-carddav serve";
