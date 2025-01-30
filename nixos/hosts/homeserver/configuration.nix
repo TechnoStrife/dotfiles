@@ -13,8 +13,8 @@
     ../../modules/common
     ../../modules/server
 
-    ../../modules/services/nextcloud.nix
     ../../modules/services/tailscale.nix
+    ../../modules/services/seafile.nix
   ];
 
   networking.hostName = "homeserver";

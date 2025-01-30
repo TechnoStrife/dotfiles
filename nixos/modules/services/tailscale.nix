@@ -4,6 +4,8 @@ let
   secrets = import ../../secrets.nix;
 in
 {
+  # https://tailscale.com/kb/1096/nixos-minecraft
+
   # make the tailscale command usable to users
   environment.systemPackages = [ pkgs.tailscale ];
 

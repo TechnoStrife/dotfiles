@@ -31,16 +31,11 @@ pushd ~/dotfiles/nixos/ >/dev/null
 # Autoformat your nix files
 # alejandra . &>/dev/null || ( alejandra . ; echo "formatting failed!" && exit 1)
 
-FLAKE="desktop"
-if [ -f ./flake-name ]; then
-    FLAKE=$(cat ./flake-name)
-fi
-
-echo "NixOS Rebuilding from $FLAKE flake..."
+echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
 echo "Full log at /tmp/nixos-switch.log"
-sudo nixos-rebuild switch --show-trace --flake .#$FLAKE &> /tmp/nixos-switch.log || (grep error /tmp/nixos-switch.log --color && exit 1)
+sudo nh os switch
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
