@@ -18,5 +18,7 @@
   ];
 
   networking.hostName = "homeserver";
+
+  system.stateVersion = "unstable";
 }
 

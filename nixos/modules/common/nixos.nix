@@ -1,9 +1,9 @@
-{ config, pkgs, inputs, stateVersion, ... }:
+{ config, pkgs, lib, inputs, stateVersion, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.stateVersion = stateVersion;
+  system.stateVersion = lib.mkDefault stateVersion;
 
   nix.gc = {
     automatic = true;

@@ -7,7 +7,7 @@
     adminEmail = "technostrife@gmail.com";
     initialAdminPassword = "change this later!";
 
-    # ccnetSettings.General.SERVICE_URL = "https://seafile.example.com";
+    ccnetSettings.General.SERVICE_URL = "https://seafile.example.com";
 
     seafileSettings = {
       quota.default = "1500"; # Amount of GB allotted to users
