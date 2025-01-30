@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, username, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -15,6 +15,8 @@
     zip
     unzip
 
+    nh
+
     ripgrep
   ];
 
@@ -25,5 +27,9 @@
       keyMode = "vi";
       extraConfig = "mouse on";
     };
+  };
+
+  environment.sessionVariables = {
+    FLAKE = "/home/${username}/dotfiles/nixos";
   };
 }

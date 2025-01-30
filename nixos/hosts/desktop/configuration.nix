@@ -10,5 +10,5 @@
       ../../modules/desktop.nix
     ];
 
-  networking.hostName = "tech";
+  networking.hostName = "desktop";
 }
