@@ -16,6 +16,8 @@
     unzip
 
     nh
+    nix-output-monitor
+    nvd
 
     ripgrep
   ];
