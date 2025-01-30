@@ -35,7 +35,7 @@ echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
 echo "Full log at /tmp/nixos-switch.log"
-sudo nh os switch
+nh os switch
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
