@@ -1,9 +1,10 @@
 { config, pkgs, inputs, username, ... }:
 
 let
-    pkgs = import (builtins.fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/6eb01a67e1fc558644daed33eaeb937145e17696.tar.gz";
-    }) {};
+  pkgs = import (builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/6eb01a67e1fc558644daed33eaeb937145e17696.tar.gz";
+    sha256 = "sha256:16ri6b8fdvs93787ifamlvjx9g9yp556596srfn1k3p6p84dg5i6";
+  }) {};
 in
 {
   services.seafile = {
