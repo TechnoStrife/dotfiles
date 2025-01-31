@@ -6,6 +6,8 @@
 
     nekoray # proxy manager
 
+    seafile-client
+
     libreoffice-qt
     hunspell # spelling for libreoffice
     hunspellDicts.ru_RU
