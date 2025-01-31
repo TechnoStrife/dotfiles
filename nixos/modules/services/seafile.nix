@@ -1,5 +1,10 @@
 { config, pkgs, inputs, username, ... }:
 
+let
+    pkgs = import (builtins.fetchTarball {
+        url = "https://github.com/NixOS/nixpkgs/archive/6eb01a67e1fc558644daed33eaeb937145e17696.tar.gz";
+    }) {};
+in
 {
   services.seafile = {
     enable = true;
@@ -8,6 +13,8 @@
     initialAdminPassword = "change this later!";
 
     ccnetSettings.General.SERVICE_URL = "https://seafile.example.com";
+
+    seahubPackage = pkgs.seahub;
 
     seafileSettings = {
       quota.default = "1500"; # Amount of GB allotted to users
