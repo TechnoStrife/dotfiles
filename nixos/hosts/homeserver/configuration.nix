@@ -14,6 +14,7 @@
     ../../modules/server
 
     ../../modules/services/tailscale.nix
+    ../../modules/services/tailscale-cert.nix
     ../../modules/services/seafile.nix
   ];
 

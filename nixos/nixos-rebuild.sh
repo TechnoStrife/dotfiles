@@ -44,7 +44,7 @@ mv ~/dotfiles/git ~/dotfiles/.git
 trap - 0
 
 # Commit all changes witih the generation metadata
-if [ "$FLAKE" = "desktop" ]; then
+if [ "$(hostname)" = "desktop" ]; then
     git commit -am "$current"
 fi
 
