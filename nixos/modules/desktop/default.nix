@@ -12,6 +12,8 @@
     ./gaming.nix
     ./printing.nix
     ./vm.nix
+
+    ./tailscale.nix
   ];
 
   # Allow unfree packages
