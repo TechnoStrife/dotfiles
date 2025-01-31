@@ -5,6 +5,9 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # Latest stable branch of nixpkgs, used for version rollback
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+
     # nixos anywhere
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,19 +22,27 @@
 
   outputs =
     {
-      nixpkgs, 
+      nixpkgs,
+      nixpkgs-stable, 
       home-manager, 
       disko,
       ...
     }@inputs:
     let
-        stateVersion = "24.11";
-        username = "tech";
-        specialArgs = {inherit inputs username stateVersion;};
+      stateVersion = "24.11";
+      username = "tech";
+      specialArgsCtor = system: {
+        inherit inputs username stateVersion;
+        pkgs-stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
     in {
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
+        desktop = nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
+          specialArgs = specialArgsCtor system;
           modules = [
             ./hosts/desktop/configuration.nix
 
@@ -40,7 +51,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.extraSpecialArgs = inputs // (specialArgsCtor system);
               home-manager.users.${username} = import ./home/desktop.nix;
             }
           ];
@@ -51,9 +62,9 @@
         # nix run github:nix-community/nixos-anywhere -- --flake .#homeserver --vm-test
         # nix run github:nix-community/nixos-anywhere -- --flake .#homeserver --target-host <hostname>
         # ssh-keygen -R <ip address>
-        homeserver = nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
+        homeserver = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
+          specialArgs = specialArgsCtor system;
           modules = [
             disko.nixosModules.disko
             ./hosts/homeserver/configuration.nix
@@ -63,7 +74,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.extraSpecialArgs = inputs // (specialArgsCtor system);
               home-manager.users.${username} = import ./home/server.nix;
             }
           ];
