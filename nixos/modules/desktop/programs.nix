@@ -20,6 +20,7 @@
     flameshot # screenshots
 
     inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
+    inputs.posting.packages.${pkgs.system}.posting
     vesktop # discord + vencord
 
     ffmpeg

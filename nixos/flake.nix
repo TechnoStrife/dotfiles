@@ -18,6 +18,7 @@
     };
 
     ayugram-desktop.url = "github:/ayugram-port/ayugram-desktop/release?submodules=1";
+    posting.url = "github:/jorikvanveen/posting-flake";
   };
 
   outputs =
