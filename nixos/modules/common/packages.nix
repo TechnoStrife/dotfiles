@@ -7,7 +7,8 @@
     sysstat
     lm_sensors # for `sensors` command
     wget
-    curl
+    xh
+    curlie
 
     file
     tree

@@ -31,10 +31,6 @@ pushd ~/dotfiles/nixos/ >/dev/null
 # Autoformat your nix files
 # alejandra . &>/dev/null || ( alejandra . ; echo "formatting failed!" && exit 1)
 
-echo "NixOS Rebuilding..."
-
-# Rebuild, output simplified errors, log trackebacks
-echo "Full log at /tmp/nixos-switch.log"
 nh os switch
 
 # Get current generation metadata
