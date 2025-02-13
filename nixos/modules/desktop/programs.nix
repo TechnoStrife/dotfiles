@@ -28,7 +28,7 @@
     mpv
     vlc
     qbittorrent
-    strawberry-qt6
+    quodlibet-full
   ];
 
   # Install firefox.
