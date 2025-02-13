@@ -25,6 +25,10 @@
 
     ffmpeg
     obs-studio
+    mpv
+    vlc
+    qbittorrent
+    strawberry-qt6
   ];
 
   # Install firefox.
