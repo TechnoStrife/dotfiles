@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./autostart.nix
     ./email.nix
     ./git.nix
   ];
